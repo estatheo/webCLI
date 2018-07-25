@@ -6,20 +6,22 @@ import { Component, ViewChild, ElementRef, OnInit, AfterViewChecked, QueryList, 
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
-  @ViewChild('msgInput') private elementRef: ElementRef;
-  @ViewChild('container') private container: ElementRef;
+export class AppComponent implements OnInit, AfterViewChecked {
+  @ViewChild('msgInput') private msgInput: ElementRef;
+  @ViewChild('container') private tex: ElementRef;
 
   messages = Array<{ id: number; value: string }>();
 
   ngOnInit() {
-    this.elementRef.nativeElement.focus();
+    this.msgInput.nativeElement.focus();
     this.messages.push({
       id: 0,
       value: 'Theodor Chichirita [Version 23.8.16]<br/>(c) 2018 Chichirita Corporations.All rights reserved.'
     });
   }
-
+  ngAfterViewChecked() {
+    this.msgInput.nativeElement.scrollIntoView();
+  }
   appendMessage(value: string) {
     const input = 'C:\\Users\\root> ';
     this.messages.push({ id: this.messages.length, value: value });
@@ -56,6 +58,14 @@ export class AppComponent implements OnInit {
         });
         break;
       }
+      case (value.toLowerCase() === input.toLowerCase() + 'mail' || value.toLowerCase() === input.toLowerCase() + 'm'): {
+        this.messages.push({
+          id: this.messages.length,
+          value:
+            '<a href="mailto:theodor.chichirita@gmail.com?Subject=Hello!">theodor.chichirita@gmail.com</a>'
+        });
+        break;
+      }
       case ( value.toLowerCase() === input.toLowerCase() + 'about' || value.toLowerCase() === input.toLowerCase() + 'a' ) : {
         this.messages.push({ id: this.messages.length, value:
             // tslint:disable-next-line:max-line-length
@@ -77,7 +87,6 @@ export class AppComponent implements OnInit {
         });
       }
     }
-    this.elementRef.nativeElement.value = '';
-    window.scrollTo(0, this.container.nativeElement.scrollHeight);
+    this.msgInput.nativeElement.value = '';
   }
 }
