@@ -1,17 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div class="container">
-  <span class="message">
-    Press help to see the menu.
-  </span>
-  <br/>
-  <br/>
+<div #container class="container">
 <span *ngFor="let message of messages">
 <div [innerHTML]="message.value"></div>
   <br/>
   <br/>
+
 </span>
-  <span>C:\Users\Nine>
+  <span>C:\Users\root>
 <textarea autofocus class="text-input" #msgInput (keydown.enter)="appendMessage('C:\\Users\\Nine> '+msgInput.value);false"></textarea>
   </span>
 </div>
