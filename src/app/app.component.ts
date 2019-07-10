@@ -11,13 +11,27 @@ export class AppComponent implements OnInit, AfterViewChecked {
   @ViewChild('container') private tex: ElementRef;
 
   messages = Array<{ id: number; value: string }>();
-
+  projectsShow = false;
+  popUpImgSrc:string;
+  popUpImgN;
+  clock_tick;
+  popUpImgSrcArray = [
+    "../assets/cobol.png",
+    "../assets/fiera.png",
+    "../assets/cox.png",
+    "../assets/fortress.png",
+    "../assets/newday.png",
+    "../assets/amido.png",
+  ];
   ngOnInit() {
     this.msgInput.nativeElement.focus();
     this.messages.push({
       id: 0,
       value: 'Theodor Chichirita [Version 23.8.16]<br/>(c) 2018 Chichirita Corporations.All rights reserved.'
     });
+    this.clock_tick = Date.now();
+    this.popUpImgSrc =  "../assets/cobol.png";
+    this.popUpImgN = 0;
   }
   ngAfterViewChecked() {
     this.msgInput.nativeElement.scrollIntoView();
@@ -32,7 +46,7 @@ export class AppComponent implements OnInit, AfterViewChecked {
       case ( value.toLowerCase() === input.toLowerCase() + 'hello' || value.toLowerCase() === input.toLowerCase() + 'help' || value.toLowerCase() === input.toLowerCase() + 'start' || value.toLowerCase() === input.toLowerCase() + 'hi' || value.toLowerCase() === input.toLowerCase() + '.' ) : {
         this.messages.push({ id: this.messages.length, value:
             // tslint:disable-next-line:max-line-length
-            'Hi, my Name is Theodor Chichirita, and I\'m a software developer, what would you like to know? <br/><u>A</u>bout<br/><u>P</u>rojects<br/><u>M</u>ail<br/><u>L</u>inkedin<br/><u>G</u>ithub<br/><u>B</u>log' });
+            'Hi, my Name is Theodor Chichirita, and I\'m a software engineer ☁ <br/><u>A</u>bout<br/><u>P</u>rojects<br/><u>M</u>ail<br/><u>L</u>inkedin<br/><u>G</u>ithub<br/><u>B</u>log' });
         break;
       }
       case ( value.toLowerCase() === input.toLowerCase() + 'linkedin' || value.toLowerCase() === input.toLowerCase() + 'l' ) : {
@@ -69,14 +83,17 @@ export class AppComponent implements OnInit, AfterViewChecked {
       case ( value.toLowerCase() === input.toLowerCase() + 'about' || value.toLowerCase() === input.toLowerCase() + 'a' ) : {
         this.messages.push({ id: this.messages.length, value:
             // tslint:disable-next-line:max-line-length
-            'Software Engineer with a passion for everything tech.<br/>I draw cats in AR/VR and I build web applications for financial institutions.I have a passion for cybersecurity and devops methodologies with an eye to automation and site reliability<br/>Interested in cryptocurrencies and looking for blockchain opportunities.<br/>AI enthusiast and Quantum dreamer, playing around with everything that\'s new and shiny.<br/>Experienced in a various array of technologies from COBOLJCL to Angular6 and .NetCore2.1' });
+            'Experienced Full Stack Developer with a demonstrated history of working in the software industry.<br/>Skilled in Product Development, Solution architect, Cloud and High transaction systems, User Experience.<br/>DevOps, DevSec and Performance Optimization. Strong engineering, professional mindset with lots of creativity and up to date with the latest technologies.' });
         break;
       }
       case ( value.toLowerCase() === input.toLowerCase() + 'projects' || value.toLowerCase() === input.toLowerCase() + 'p' ) : {
-        this.messages.push({
-          id: this.messages.length,
-          value: 'Work in progress (this UI (; )'
-        });
+        // this.messages.push({
+        //   id: this.messages.length,
+        //   value: 'Work in progress (this UI (; )'
+        // });
+        this.popUpImgSrc = this.popUpImgSrcArray[0];
+        this.clock_tick = Date.now();
+        this.projectsShow = true;
         break;
       }
       case ( value.toLowerCase() === input.toLowerCase() + 'clear' || value.toLowerCase() === input.toLowerCase() + 'cls' ) : {
@@ -88,5 +105,18 @@ export class AppComponent implements OnInit, AfterViewChecked {
       }
     }
     this.msgInput.nativeElement.value = '';
+  }
+
+  nextImg(){
+    if(this.popUpImgN > 4){
+      this.popUpImgN = 0;
+      this.popUpImgSrc = this.popUpImgSrcArray[0];
+      this.projectsShow = false;
+    }
+    else {
+      this.popUpImgN++;
+      this.popUpImgSrc = this.popUpImgSrcArray[this.popUpImgN];
+    }
+    this.clock_tick = Date.now();
   }
 }

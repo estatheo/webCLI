@@ -1,13 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div class="container">
-<span *ngFor="let message of messages">
-<div [innerHTML]="message.value"></div>
-  <br/>
-  <br/>
-
-</span>
-  <span>C:\Users\root>
-<textarea autofocus class="text-input" #msgInput (keydown.enter)="appendMessage('C:\\Users\\root> '+msgInput.value);false"></textarea>
-  </span>
+<div class="background">
+  <div class="container">
+    <span *ngFor="let message of messages">
+      <div [innerHTML]="message.value"></div>
+      <br/>
+      <br/>
+    </span>
+    <span>C:\Users\root>
+      <textarea autofocus class="text-input" #msgInput (keydown.enter)="appendMessage('C:\\Users\\root> '+msgInput.value);false"></textarea>
+    </span>
+    
+  </div>
+  <div class="projects" [hidden]="!projectsShow">
+      <img class="projects-prompt" src="{{popUpImgSrc}}?d={{clock_tick}}" />
+      <a class="projects-button" (click)="nextImg()" >
+        <img class="projects-button-img" src="../assets/button.PNG" />
+      </a>
+    </div>
 </div>
