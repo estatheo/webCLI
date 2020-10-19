@@ -59,3 +59,21 @@
 *:focus {
   outline: none;
 }
+
+@media only screen and (max-width: 1440px) {
+  .container {
+    left: 24rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    left: 12rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    left: 2rem;
+  }
+}
