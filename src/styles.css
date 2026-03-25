@@ -1,6 +1,202 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
-    /* display: block; */
-    background-color: black;
-    color: green;
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  color: #111318;
+  background:
+    radial-gradient(1200px 500px at 15% -10%, #dbe8ff 0%, #f8faff00 60%),
+    radial-gradient(900px 400px at 100% 0%, #f3f5fa 0%, #f8faff00 65%),
+    linear-gradient(180deg, #f8faff 0%, #f0f4fb 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.shell {
+  min-height: 100vh;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.4rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+  padding: 0.4rem 0.1rem;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #111318;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #57607a;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+main {
+  display: grid;
+  gap: 2.2rem;
+}
+
+.section {
+  padding: 0.1rem 0;
+}
+
+.kicker {
+  margin: 0;
+  color: #6d748a;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.4rem 0;
+  font-size: clamp(2.1rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.role {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #30374d;
+  font-weight: 600;
+}
+
+.location {
+  margin-top: 0.8rem;
+  color: #5d657d;
+  max-width: 62ch;
+  line-height: 1.6;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.3rem;
+}
+
+.btn {
+  border: 1px solid #d5daea;
+  color: #151924;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.56rem 0.96rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #fff;
+}
+
+.btn-primary {
+  border: 1px solid #202430;
+  background: #202430;
+  color: #fff;
+}
+
+h2 {
+  margin: 0 0 0.7rem;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #434a5d;
+  display: grid;
+  gap: 0.44rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.item {
+  padding: 0;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #6a7186;
+  margin-bottom: 0.45rem;
+}
+
+h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.item p,
+#contact p,
+.note {
+  margin: 0;
+  color: #515973;
+  line-height: 1.52;
+}
+
+.text-link {
+  color: #1d47a1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.note {
+  margin-top: 0.65rem;
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  color: #6a7186;
+  font-size: 0.85rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+@media (max-width: 920px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    padding: 0.9rem;
+  }
+
+  nav {
+    gap: 0.7rem;
+  }
+
+  main {
+    gap: 1.8rem;
+  }
 }

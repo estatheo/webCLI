@@ -1,79 +1,199 @@
-/* div {
-  border: solid 1px red;
-} */
-
-.background{
-  background-image: url("../assets/computer-screen-2.png");
-  background-repeat:no-repeat;
-  background-position: center center;
-  background-size: 90rem;
-  height: 75rem;
-}
-.projects{
-  position: relative;
-  top: -11rem;
-  left: 58rem;
-  height: 22rem;
-  width: 32rem;
-}
-.projects-prompt{
-  height: 22rem;
-  width: 31rem;
+:host {
+  display: block;
+  min-height: 100vh;
+  color: #101114;
 }
 
-.projects-button{
-  position: relative;
-  top: -3.25rem;
-  left: 22.8rem;
+.shell {
+  min-height: 100vh;
+  padding: 1.25rem;
+  background:
+    radial-gradient(1200px 500px at 15% -10%, #dbe8ff 0%, #f6f8fb00 60%),
+    radial-gradient(900px 400px at 100% 0%, #f2f4fa 0%, #f6f8fb00 65%),
+    linear-gradient(180deg, #f6f8fb 0%, #eef2f8 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.projects-button-img{
-  height: 2rem;
-  width: 7rem;
+.topbar {
+  max-width: 1060px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.2rem;
 }
 
-.container {
-  position: relative;
-  top: 12rem;
-  left: 58rem;
-  width: 33.5rem;
-  height: 23rem;
-  font-family: 'Roboto',  sans-serif;
-  font-size: 1rem;
-  overflow-x: auto;
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
-.text-input {
-  height: 1rem;
-  background: transparent;
-  border: white;
-  color: green;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  overflow: hidden;
-  resize: none;
-  width: calc(100% - 10rem);
-  vertical-align: text-top
+nav {
+  display: flex;
+  gap: 1rem;
 }
 
-*:focus {
-  outline: none;
+nav a {
+  color: #4f566b;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
 }
 
-@media only screen and (max-width: 1440px) {
-  .container {
-    left: 24rem;
+main {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.glass {
+  background: #ffffffc2;
+  border: 1px solid #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 10px 35px #6f85ab21;
+  backdrop-filter: blur(14px);
+}
+
+.hero,
+.about,
+.contact {
+  padding: 2rem;
+}
+
+.kicker {
+  margin: 0;
+  color: #6a7186;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.4rem 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.role {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #31374a;
+  font-weight: 600;
+}
+
+.location {
+  margin-top: 0.8rem;
+  color: #5d657d;
+  max-width: 62ch;
+  line-height: 1.6;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.3rem;
+}
+
+.btn {
+  border: 1px solid #d5daea;
+  color: #151924;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.57rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  background: #fff;
+}
+
+.btn-primary {
+  border: 1px solid #1f232f;
+  background: #1f232f;
+  color: #fff;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #434a5d;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.work {
+  padding: 0.2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.card {
+  padding: 1.25rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #6a7186;
+  background: #eef2f8;
+  border-radius: 999px;
+  padding: 0.18rem 0.52rem;
+  margin-bottom: 0.6rem;
+}
+
+h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.card p,
+.contact p,
+.note {
+  margin: 0;
+  color: #515973;
+  line-height: 1.52;
+}
+
+.contact {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.note {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 920px) {
+  .cards {
+    grid-template-columns: 1fr;
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  .container {
-    left: 12rem;
+@media (max-width: 640px) {
+  .shell {
+    padding: 0.8rem;
   }
-}
 
-@media only screen and (max-width: 768px) {
-  .container {
-    left: 2rem;
+  .hero,
+  .about,
+  .contact {
+    padding: 1.2rem;
+  }
+
+  nav {
+    gap: 0.7rem;
   }
 }

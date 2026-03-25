@@ -1,18 +1,87 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Theodor Chichirita</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Personal landing page for Theodor Chichirita — software engineer focused on cloud architecture, product engineering, and high-performance systems."
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="logo" href="#home">Theodor</a>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-<head>
-  <meta charset="utf-8">
-  <title>Theodor Chichirita</title>
-  <base href="/">
+      <main id="home">
+        <section class="hero section">
+          <p class="kicker">Personal Website</p>
+          <h1>Theodor Chichirita</h1>
+          <p class="role">Senior Software Engineer</p>
+          <p class="location">
+            I design and ship cloud-first software products with a strong focus on reliability,
+            performance, and delightful user experience.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:theodor.chichirita@gmail.com?subject=Hello%20Theodor">Get in touch</a>
+            <a class="btn" href="https://www.linkedin.com/in/theodor-chichirita-78770b140/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://github.com/estatheo" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </section>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-</head>
+        <section class="section" id="about">
+          <h2>What I focus on</h2>
+          <ul>
+            <li>End-to-end product engineering.</li>
+            <li>Cloud architecture and modernization.</li>
+            <li>High-transaction system performance optimization.</li>
+            <li>DevSecOps and platform reliability practices.</li>
+          </ul>
+        </section>
 
-<body>
-  <app-root></app-root>
-</body>
+        <section class="section" id="work">
+          <h2>Selected Areas</h2>
+          <div class="cards">
+            <article class="item">
+              <span class="tag">Product</span>
+              <h3>Enterprise Product Platforms</h3>
+              <p>Delivered mission-critical capabilities across cross-functional engineering teams.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Cloud</span>
+              <h3>Cloud-Native Architecture</h3>
+              <p>Designed scalable and secure systems built for long-term maintainability.</p>
+            </article>
+            <article class="item">
+              <span class="tag">Performance</span>
+              <h3>Performance Engineering</h3>
+              <p>Improved throughput and responsiveness for high-traffic digital platforms.</p>
+            </article>
+          </div>
+        </section>
 
+        <section class="section" id="contact">
+          <h2>Elsewhere</h2>
+          <p>Read long-form thoughts on engineering and product.</p>
+          <a class="text-link" href="https://medium.com/@theodor.chichirita" target="_blank" rel="noopener">Blog →</a>
+          <p class="note">Share your latest CV details and I can add a full timeline section next.</p>
+        </section>
+      </main>
+
+      <footer>
+        <p>© <span id="year"></span> Theodor Chichirita</p>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
 </html>
